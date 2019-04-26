@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Simple .net console logger that outputs messages in certain colors. Normal messages are white, success messages are green, warnings are yellow and errors are red. You can also log your entire console output to a file</Description>
+    <PackageProjectUrl>https://github.com/kunalranglani/SimpleConsoleLogger</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/kunalranglani/SimpleConsoleLogger</RepositoryUrl>
+    <PackageTags>.net</PackageTags>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+</Project>
