@@ -8,6 +8,8 @@
     <RepositoryUrl>https://github.com/kunalranglani/SimpleConsoleLogger</RepositoryUrl>
     <PackageTags>.net</PackageTags>
     <RepositoryType>git</RepositoryType>
+    <PackageId>SimpleConsoleAppLogger</PackageId>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
