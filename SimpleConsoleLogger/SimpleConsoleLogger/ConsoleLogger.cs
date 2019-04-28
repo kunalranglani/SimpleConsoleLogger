@@ -1,27 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace SimpleConsoleLogger.Static
+namespace SimpleConsoleLogger
 {
-    public static class Logger
+    public static class ConsoleLogger
     {
         private readonly static StringBuilder log = new StringBuilder();
+        public static List<Line> lines = new List<Line>();
 
         public static void Log(string message)
         {
-            LogMessage(message, ConsoleColor.White);
+            LogMessage(message, ConsoleColor.White, Level.Normal);
         }
 
         public static void LogSuccess(string message)
         {
-            LogMessage(message, ConsoleColor.Green);
+            LogMessage(message, ConsoleColor.Green, Level.Success);
         }
 
         public static void LogException(Exception exception, bool exitApplication = false)
         {
-            LogMessage(exception.Message, ConsoleColor.Red);
-            LogMessage(exception.StackTrace, ConsoleColor.Red);
+            LogMessage(exception.Message, ConsoleColor.Red, Level.Error);
+            LogMessage(exception.StackTrace, ConsoleColor.Red, Level.Error);
 
             if (exitApplication)
             {
@@ -31,7 +33,7 @@ namespace SimpleConsoleLogger.Static
 
         public static void LogError(string message, bool exitApplication = false)
         {
-            LogMessage(message, ConsoleColor.Red);
+            LogMessage(message, ConsoleColor.Red, Level.Error);
 
             if (exitApplication)
             {
@@ -41,12 +43,22 @@ namespace SimpleConsoleLogger.Static
 
         public static void LogWarning(string warning)
         {
-            LogMessage(warning, ConsoleColor.Yellow);
+            LogMessage(warning, ConsoleColor.Yellow, Level.Warning);
         }
 
         public static void LogSilent(string message)
         {
-            log.AppendLine(message);
+            LogMessage(message, ConsoleColor.White, Level.Silent);
+        }
+
+        public static string GetLogsRawString()
+        {
+            return log.ToString();
+        }
+
+        public static Line[] GetLogs()
+        {
+            return lines.ToArray();
         }
 
         public static void LogToFile(string logFileFullPath)
@@ -63,12 +75,30 @@ namespace SimpleConsoleLogger.Static
             }
         }
 
-        private static void LogMessage(string message, ConsoleColor color)
+        private static void LogMessage(string message, ConsoleColor color, Level level)
         {
             Console.ForegroundColor = color;
-            LogSilent(message);
-            Console.WriteLine(message);
+            log.AppendLine(message);
+            LogLine(message, color.ToString(), level);
+
+            if (level != Level.Silent)
+            {
+                Console.WriteLine(message);
+            }
+
             Console.ResetColor();
+        }
+
+        private static void LogLine(string message, string color, Level level)
+        {
+            Line line = new Line()
+            {
+                Color = color,
+                Message = message,
+                Level = level
+            };
+
+            lines.Add(line);
         }
 
         private static void ExitApplication()

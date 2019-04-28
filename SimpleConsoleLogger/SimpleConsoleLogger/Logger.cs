@@ -6,37 +6,47 @@ namespace SimpleConsoleLogger
     {
         public void Log(string message)
         {
-            Static.Logger.Log(message);
+            ConsoleLogger.Log(message);
         }
 
         public void LogSuccess(string message)
         {
-            Static.Logger.LogSuccess(message);
+            ConsoleLogger.LogSuccess(message);
         }
 
         public void LogException(Exception exception, bool exitApplication = false)
         {
-            Static.Logger.LogException(exception, exitApplication);
+            ConsoleLogger.LogException(exception, exitApplication);
         }
 
         public void LogError(string message, bool exitApplication = false)
         {
-            Static.Logger.LogError(message, exitApplication);
+            ConsoleLogger.LogError(message, exitApplication);
         }
 
         public void LogWarning(string warning)
         {
-            Static.Logger.LogWarning(warning);
+            ConsoleLogger.LogWarning(warning);
         }
 
         public void LogSilent(string message)
         {
-            Static.Logger.LogSilent(message);
+            ConsoleLogger.LogSilent(message);
         }
 
         public void LogToFile(string logFileFullPath)
         {
-            Static.Logger.LogToFile(logFileFullPath);
+            ConsoleLogger.LogToFile(logFileFullPath);
+        }
+
+        public string GetLogsRawString()
+        {
+            return ConsoleLogger.GetLogsRawString();
+        }
+
+        public Line[] GetLogs()
+        {
+            return ConsoleLogger.GetLogs();
         }
     }
 }

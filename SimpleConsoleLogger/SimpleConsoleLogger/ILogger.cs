@@ -17,5 +17,9 @@ namespace SimpleConsoleLogger
         void LogSilent(string message);
 
         void LogToFile(string logFileFullPath);
+
+        string GetLogsRawString();
+
+        Line[] GetLogs();
     }
 }

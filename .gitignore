@@ -8,3 +8,4 @@
 /SimpleConsoleLogger/.vs/SimpleConsoleLogger/DesignTimeBuild
 /SimpleConsoleLogger/SimpleConsoleLogger/bin/Debug/net472
 /SimpleConsoleLogger/SimpleConsoleLogger/bin/Debug/net452
+*.nupkg
