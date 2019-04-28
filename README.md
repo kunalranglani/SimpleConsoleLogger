@@ -4,17 +4,21 @@ Simple .net console logger that outputs messages in certain colors. Normal messa
 warnings are yellow and errors are red. You can also log your entire console output to a file.
 
 ```bash
-Logger.Log
+ConsoleLogger.Log
 
-Logger.LogSuccess
+ConsoleLogger.LogSuccess
 
-Logger.LogException
+ConsoleLogger.LogException
 
-Logger.LogError
+ConsoleLogger.LogError
 
-Logger.LogWarning
+ConsoleLogger.LogWarning
 
-Logger.LogSilent
+ConsoleLogger.LogSilent
 
-Logger.LogToFile
+ConsoleLogger.LogToFile
+
+ConsoleLogger.GetLogsRawString
+
+Console.Logger.GetLogs
 ```
