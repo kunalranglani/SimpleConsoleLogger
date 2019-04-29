@@ -22,19 +22,20 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: NuGetCommand@2
-  inputs:
-    command: 'pack'
-    versioningScheme: 'byPrereleaseNumber'
-    requestedMajorVersion: '6'
-
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+- task: NuGetCommand@2
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: 'pack'
+    versioningScheme: 'byPrereleaseNumber'
+    requestedMajorVersion: '6'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    nuGetFeedType: 'external'
+    externalEndpoint: '911a205c-4457-465c-a525-98db52554a42'
