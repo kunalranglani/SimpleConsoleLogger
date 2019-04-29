@@ -20,5 +20,5 @@ ConsoleLogger.LogToFile
 
 ConsoleLogger.GetLogsRawString
 
-Console.Logger.GetLogs
+ConsoleLogger.GetLogs
 ```
