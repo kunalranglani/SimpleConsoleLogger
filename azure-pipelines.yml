@@ -35,10 +35,7 @@ steps:
   inputs:
     command: 'pack'
     versioningScheme: 'byBuildNumber'
+    buildProperties: '6.0.$(Rev:r)'
 
-- task: NuGetCommand@2
-  inputs:
-    command: 'push'
-    nuGetFeedType: 'external'
-    externalEndpoint: '911a205c-4457-465c-a525-98db52554a42'
+
 
