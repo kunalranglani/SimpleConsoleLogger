@@ -34,8 +34,5 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    versioningScheme: 'byBuildNumber'
-    buildProperties: '6.0.$(Rev:r)'
-
-
-
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: '6.0.$(BuildId)''
