@@ -24,3 +24,6 @@ ConsoleLogger.GetLogsRawString
 
 ConsoleLogger.GetLogs
 ```
+
+# Install
+Install-Package SimpleConsoleAppLogger -Version 6.0.0
