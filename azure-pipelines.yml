@@ -30,9 +30,3 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'pack'
-    versioningScheme: 'byEnvVar'
-    versionEnvVar: '6.0.$(BuildId)'
