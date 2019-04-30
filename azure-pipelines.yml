@@ -34,13 +34,11 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    versioningScheme: 'byPrereleaseNumber'
-    requestedMajorVersion: '6'   
+    versioningScheme: 'byBuildNumber'
 
 - task: NuGetCommand@2
   inputs:
     command: 'push'
     nuGetFeedType: 'external'
     externalEndpoint: '911a205c-4457-465c-a525-98db52554a42'
-
 
