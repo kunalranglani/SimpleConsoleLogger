@@ -34,7 +34,7 @@ steps:
     versioningScheme: 'byPrereleaseNumber'
     requestedMajorVersion: '6'   
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'push'
     nuGetFeedType: 'external'
