@@ -16,7 +16,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@0
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 
+    checkLatest: true
 
 - task: NuGetCommand@2
   inputs:
@@ -27,15 +30,3 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'pack'
-    versioningScheme: 'byPrereleaseNumber'
-    requestedMajorVersion: '6'   
-
-- task: NuGetCommand@2
-  inputs:
-    command: 'push'
-    nuGetFeedType: 'external'
-    externalEndpoint: '911a205c-4457-465c-a525-98db52554a42'
