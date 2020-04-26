@@ -9,3 +9,5 @@
 /SimpleConsoleLogger/SimpleConsoleLogger/bin/Debug/net472
 /SimpleConsoleLogger/SimpleConsoleLogger/bin/Debug/net452
 *.nupkg
+/SimpleConsoleLogger/SimpleConsoleLogger/bin/Debug/net48
+/SimpleConsoleLogger/SimpleConsoleLogger/bin/Debug
